@@ -1,0 +1,50 @@
+Logic Gates
+
+Concepts
+
+Logic gates are the basic building blocks of digital circuits.
+They perform logical operations on one or more binary inputs to produce a single output.
+
+---
+
+Basic Gates
+
+| Gate | Symbol | Expression  |     Truth Table        |
+|------|--------|-------------|------------------------|
+| AND  |    ·   | Y = A · B   | 00→0, 01→0, 10→0, 11→1 |
+| OR   |    +   | Y = A + B   | 00→0, 01→1, 10→1, 11→1 |
+| NOT  |    —   | Y = A  '    | 0→1, 1→0               |
+
+---
+
+Universal Gates
+
+| Gate | Expression  |             Notes                    |
+|------|-------------|--------------------------------------|
+| NAND |Y = (A · B)' | Universal gate — can form all others |
+| NOR  |Y = (A + B)' | Universal gate — can form all others |
+
+Example:  
+NAND can act as NOT → (A·A)’ = A’  
+
+---
+
+Derived Gates
+
+| Gate |      Expression    |           Function           |
+|------|--------------------|------------------------------|
+| XOR  | A ⊕ B = A’B + AB’ | Output 1 when inputs differ  |
+| XNOR | A ⊙ B = AB + A’B’ | Output 1 when inputs are same|
+
+---
+
+Realization using NAND / NOR only
+
+Example:  
+F = A + BC  
+→ NAND realization:  
+F = ((A’)·(B’ + C’))’  
+
+These conversions are essential in CMOS/VLSI design since NAND and NOR are easiest to fabricate using MOS transistors.
+
+---
