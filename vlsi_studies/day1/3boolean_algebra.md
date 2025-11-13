@@ -33,10 +33,5 @@ Product of Sums (POS)
 Expression = AND of OR terms  
 Example: F(A,B,C) = (A + B + C)(A' + B' + C)
 
---- 
-→ **F = B**
 
----
-
-## 🧠 Reflection
 Boolean simplification reduces gate count and power consumption — crucial in digital design and VLSI optimization.
