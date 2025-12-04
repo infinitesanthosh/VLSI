@@ -1,0 +1,31 @@
+Verilog always @(*): The Combinational Logic Powerhouse
+The always @(*) block is the standard and safest way to describe combinational logic in Verilog. 
+It tells the synthesis tool to create a circuit whose output depends only on its current inputs, with no memory involved.
+Key Points:
+Meaning: The asterisk (*) is a shortcut that automatically includes every signal read within the block (i.e., every input) into the sensitivity list.
+Purpose: It ensures that the output is re-evaluated immediately whenever any input changes, correctly modeling physical gate behavior.
+
+Safety: Using always @(*) prevents accidental creation of unintended latches (memory elements), 
+which is a very common bug when manually defining the sensitivity list.
+
+Application: Use it for MUXes, Decoders, Encoders, Adders, Comparators, and any other logic that doesn't use a clock.
+
+Rule of Thumb: If your module is not clocked, use always @(*)!
+
+The always @(*) construct is a procedural block used to define logic whose output changes immediately in response to any input change.
+
+
+Syntax:
+always @(*) begin
+    // [1] Output signal must be declared as 'reg' in the module port list
+    // [2] Combinational Logic (e.g., if-else, case, arithmetic)
+    
+    if (Input_A == 1'b1) begin
+        Output_Z = Input_B;
+    end
+    else begin
+        Output_Z = Input_C;
+    end
+    
+    // [3] CRITICAL: Output_Z must be assigned a value in ALL possible paths!
+end
